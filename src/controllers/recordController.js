@@ -120,4 +120,24 @@ const deleteOneRecord = (req, res) => {
       .status(400)
       .send({
         status: "FAILED",
-        data: { error: "Parameter ':wor
+        data: { error: "Parameter ':workoutId' can not be empty" },
+      });
+  }
+  try {
+    recordService.deleteOneRecord(workoutId);
+    res.status(204).send({ status: "OK" });
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .send({ status: "FAILED", data: { error: error?.message || error } });
+  }
+};
+
+module.exports = {
+  getAllRecords,
+  getOneRecord,
+  getRecordForWorkout,
+  createNewRecord,
+  updateOneRecord,
+  deleteOneRecord,
+};
