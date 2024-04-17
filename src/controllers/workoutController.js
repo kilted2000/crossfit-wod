@@ -1,5 +1,5 @@
 const workoutService = require("../services/workoutService");
-
+//modify the workoutService.js file
 const getAllWorkouts = (req, res) => {
     const { mode } = req.query;
   try {

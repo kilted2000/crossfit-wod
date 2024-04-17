@@ -1,6 +1,6 @@
 const { v4: uuid } = require("uuid");
 const Workout = require("../database/Workout");
-
+//performs crud operation I wrote in workout.js
 const getAllWorkouts = (filterParams) => {
   try {
     const allWorkouts = Workout.getAllWorkouts(filterParams);

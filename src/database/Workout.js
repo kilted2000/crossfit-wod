@@ -1,6 +1,6 @@
 const DB = require("./db.json");
 const { saveToDatabase } = require("./utils");
-
+//includes db commands
 const getAllWorkouts = (filterParams) => {
   try {
     let workouts = DB.workouts;
